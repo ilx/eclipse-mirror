@@ -1,0 +1,42 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>net.croz.infrastructure</groupId>
+    <artifactId>eclipse-mirror</artifactId>
+    <version>3.7.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <description>Mirrors eclipse projects.</description>
+
+
+    <modules>
+        <module>ajdt</module>
+        <module>moreunit</module>
+        <module>eclipse-cs</module>
+        <module>pmd</module>
+        <module>anyedit</module>
+        <module>subclipse</module>
+        <module>eclemma</module>
+        <module>m2e</module>
+        <module>mylyn</module>
+        <module>orbit</module>
+        <module>eclipse</module>
+        <module>sts</module>
+    </modules>
+
+
+    <properties>
+        <version.tycho>0.13.0</version.tycho>
+    </properties>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.eclipse.tycho.extras</groupId>
+                    <artifactId>tycho-p2-extras-plugin</artifactId>
+                    <version>${version.tycho}</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+
+</project>
