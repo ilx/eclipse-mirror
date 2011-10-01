@@ -27,6 +27,45 @@
         <version.tycho>0.13.0</version.tycho>
     </properties>
 
+    <profiles>
+        <profile>
+            <id>croz</id>
+            <activation>
+                <property>
+                    <name>croz</name>
+                    <value>true</value>
+                </property>
+            </activation>
+            <build>
+                <pluginManagement>
+                    <plugins>
+                        <plugin>
+                            <groupId>org.codehaus.mojo</groupId>
+                            <artifactId>wagon-maven-plugin</artifactId>
+                            <version>1.0-beta-3</version>
+                            <executions>
+                                <execution>
+                                    <id>upload</id>
+                                    <phase>deploy</phase>
+                                    <goals>
+                                        <goal>upload</goal>
+                                    </goals>
+                                    <configuration>
+                                        <serverId>croz-deploy</serverId>
+                                        <fromDir>${project.build.directory}/target/repository</fromDir>
+                                        <includes>**</includes>
+                                        <url>dav://deploy.lan.croz.net/eclipse-mirror/${project.artifactId}</url>
+                                    </configuration>
+                                </execution>
+                            </executions>
+                        </plugin>
+                    </plugins>
+                </pluginManagement>
+            </build>
+        </profile>
+    </profiles>
+
+
     <build>
         <pluginManagement>
             <plugins>
