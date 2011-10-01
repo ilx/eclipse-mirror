@@ -36,6 +36,20 @@
                     <value>true</value>
                 </property>
             </activation>
+
+            <distributionManagement>
+                <repository>
+                    <id>croz-repository</id>
+                    <name>CROZ Releases Repository</name>
+                    <url>https://repository.lan.croz.net/content/repositories/releases/</url>
+                </repository>
+                <snapshotRepository>
+                    <id>croz-repository</id>
+                    <name>CROZ Snapshots Repository</name>
+                    <url>https://repository.lan.croz.net/content/repositories/snapshots/</url>
+                </snapshotRepository>
+            </distributionManagement>
+
             <build>
                 <pluginManagement>
                     <plugins>
