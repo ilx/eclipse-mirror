@@ -75,13 +75,6 @@
                         </plugin>
                     </plugins>
                 </pluginManagement>
-
-                <plugins>
-                    <plugin>
-                        <groupId>org.codehaus.mojo</groupId>
-                        <artifactId>wagon-maven-plugin</artifactId>
-                    </plugin>
-                </plugins>
             </build>
         </profile>
     </profiles>
