@@ -95,7 +95,7 @@
                                     <serverId>croz-deploy</serverId>
                                     <fromDir>${project.build.directory}/target/repository</fromDir>
                                     <includes>**</includes>
-                                    <url>dav://deploy.lan.croz.net/eclipse-mirror/${project.artifactId}</url>
+                                    <url>dav:http://deploy.lan.croz.net/eclipse-mirror/${project.artifactId}</url>
                                 </configuration>
                             </execution>
                         </executions>
