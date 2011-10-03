@@ -66,7 +66,7 @@
                                     </goals>
                                     <configuration>
                                         <serverId>croz-deploy</serverId>
-                                        <fromDir>${project.build.directory}/target/repository</fromDir>
+                                        <fromDir>${project.build.directory}/repository</fromDir>
                                         <includes>**</includes>
                                         <url>dav://deploy.lan.croz.net/eclipse-mirror/${project.artifactId}</url>
                                     </configuration>
