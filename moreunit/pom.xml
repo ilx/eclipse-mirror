@@ -39,25 +39,67 @@
                     <append>true</append>
                 </configuration>
             </plugin>
+
+                    <plugin>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>wagon-maven-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>upload</id>
+                                <phase>verify</phase>
+                                <goals>
+                                    <goal>upload</goal>
+                                </goals>
+                                <configuration>
+                                    <serverId>croz-deploy</serverId>
+                                    <fromDir>${project.build.directory}/target/repository</fromDir>
+                                    <includes>**</includes>
+                                    <url>dav://deploy.lan.croz.net/eclipse-mirror/${project.artifactId}}</url>
+                                </configuration>
+                            </execution>
+                        </executions>
+
+                    </plugin>
+
+
         </plugins>
+
+<!--         <extensions> -->
+<!--             <extension> -->
+<!--                 <groupId>org.apache.maven.wagon</groupId> -->
+<!--                 <artifactId>wagon-webdav</artifactId> -->
+<!--                 <version>1.0-rc1-SNAPSHOT</version> -->
+<!--             </extension> -->
+
+<!--         </extensions> -->
+
     </build>
 
     <profiles>
         <profile>
             <id>croz</id>
-            <activation>
-                <property>
-                    <name>croz</name>
-                    <value>true</value>
-                </property>
-            </activation>
             <build>
                 <plugins>
                     <!--  -->
                     <plugin>
                         <groupId>org.codehaus.mojo</groupId>
                         <artifactId>wagon-maven-plugin</artifactId>
-                        <version>1.0-beta-3</version>
+                        <executions>
+                            <execution>
+                                <id>upload</id>
+                                <phase>verify</phase>
+                                <goals>
+                                    <goal>upload</goal>
+                                </goals>
+                                <configuration>
+                                    <serverId>croz-deploy</serverId>
+                                    <fromDir>${project.build.directory}/target/repository</fromDir>
+                                    <includes>**</includes>
+                                    <url>dav://deploy.lan.croz.net/eclipse-mirror/${project.artifactId}</url>
+                                </configuration>
+                            </execution>
+                        </executions>
+
                     </plugin>
                 </plugins>
             </build>
