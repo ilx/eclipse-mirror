@@ -11,6 +11,20 @@
 
     <!--   http://subclipse.tigris.org/update_1.6.x -->
 
+    <profiles>
+        <profile>
+            <id>croz</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>wagon-maven-plugin</artifactId>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+
     <build>
         <plugins>
             <plugin>

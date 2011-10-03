@@ -1,16 +1,30 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <parent>
-    <artifactId>eclipse-mirror</artifactId>
-    <groupId>net.croz.infrastructure</groupId>
-    <version>3.7.1-SNAPSHOT</version>
-    <relativePath>..</relativePath>
-  </parent>
-  <artifactId>orbit</artifactId>
-  <packaging>pom</packaging>
-  <description>Vidi http://download.eclipse.org/tools/orbit/downloads/drops/S20110907174232</description>
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <artifactId>eclipse-mirror</artifactId>
+        <groupId>net.croz.infrastructure</groupId>
+        <version>3.7.1-SNAPSHOT</version>
+        <relativePath>..</relativePath>
+    </parent>
+    <artifactId>orbit</artifactId>
+    <packaging>pom</packaging>
+    <description>Vidi http://download.eclipse.org/tools/orbit/downloads/drops/S20110907174232</description>
 
-      <build>
+    <profiles>
+        <profile>
+            <id>croz</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>wagon-maven-plugin</artifactId>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+
+    <build>
         <plugins>
             <plugin>
                 <groupId>org.eclipse.tycho.extras</groupId>
@@ -26,7 +40,8 @@
                 <configuration>
                     <source>
                         <repository>
-                            <url>http://download.eclipse.org/tools/orbit/downloads/drops/S20110907174232/repository/</url>
+<!--                             <url>http://download.eclipse.org/tools/orbit/downloads/drops/S20110907174232/repository/</url> -->
+                            <url>http://download.eclipse.org/tools/orbit/downloads/drops/R20100519200754/repository/</url>
                             <layout>p2</layout>
                         </repository>
                     </source>
