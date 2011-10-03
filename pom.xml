@@ -18,8 +18,8 @@
         <module>m2e</module>
         <module>mylyn</module>
         <module>orbit</module>
-<!--         <module>eclipse</module> -->
-<!--         <module>sts</module> -->
+        <module>eclipse</module>
+        <module>sts</module>
     </modules>
 
 
