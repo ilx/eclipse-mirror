@@ -1,0 +1,60 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>net.croz.infrastructure</groupId>
+        <artifactId>m2e-plugins</artifactId>
+        <version>3.7.1-SNAPSHOT</version>
+        <relativePath>..</relativePath>
+    </parent>
+    <artifactId>m2e-qa-checkstyle-pmd</artifactId>
+
+    <packaging>pom</packaging>
+
+    <profiles>
+        <profile>
+            <id>croz</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>wagon-maven-plugin</artifactId>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.eclipse.tycho.extras</groupId>
+                <artifactId>tycho-p2-extras-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <phase>prepare-package</phase>
+                        <goals>
+                            <goal>mirror</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <source>
+                        <repository>
+                            <url>http://bimargulies.github.com/m2e-code-quality/site/1.0/</url>
+                            <layout>p2</layout>
+                        </repository>
+                    </source>
+
+                    <destination>${project.build.directory}/repository</destination>
+                    <followStrictOnly>false</followStrictOnly>
+                    <includeOptional>true</includeOptional>
+                    <latestVersionOnly>true</latestVersionOnly>
+                    <mirrorMetadataOnly>false</mirrorMetadataOnly>
+                    <compress>true</compress>
+                    <append>true</append>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

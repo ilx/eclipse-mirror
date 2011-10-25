@@ -1,0 +1,21 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <artifactId>eclipse-mirror</artifactId>
+    <groupId>net.croz.infrastructure</groupId>
+    <version>3.7.1-SNAPSHOT</version>
+    <relativePath>..</relativePath>
+  </parent>
+  <artifactId>m2e-plugins</artifactId>
+  <packaging>pom</packaging>
+  
+  <modules>
+  	<module>m2e-jaxb-xmlbeans</module>
+  	<module>m2e-objectledge</module>
+  	<module>m2e-qa-checkstyle-pmd</module>
+  	<module>m2e-sonatype-extras</module>
+  	<module>m2e-sonatype-subclipse</module>
+  	<module>m2e-sonatype-tycho</module>
+  	<module>m2e-wtp</module>
+  </modules>
+</project>

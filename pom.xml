@@ -9,10 +9,12 @@
 
     <modules>
         <module>ajdt</module>
+        <module>ajdt-configurator</module>
         <module>moreunit</module>
         <module>eclipse-cs</module>
         <module>pmd</module>
         <module>anyedit</module>
+<!--         <module>subclipse-1.8</module> -->
         <module>subclipse</module>
         <module>eclemma</module>
         <module>m2e</module>
@@ -20,6 +22,7 @@
         <module>orbit</module>
         <module>eclipse</module>
         <module>sts</module>
+        <module>m2e-plugins</module>
     </modules>
 
 

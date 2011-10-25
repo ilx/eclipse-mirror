@@ -6,10 +6,10 @@
         <version>3.7.1-SNAPSHOT</version>
         <relativePath>..</relativePath>
     </parent>
-    <artifactId>sts</artifactId>
+    <artifactId>subclipse-1.8</artifactId>
     <packaging>pom</packaging>
 
-<!--   http://dist.springsource.com/release/TOOLS/update/e3.7 -->
+    <!--   http://subclipse.tigris.org/update_1.6.x -->
 
     <profiles>
         <profile>
@@ -41,46 +41,17 @@
                 <configuration>
                     <source>
                         <repository>
-                            <url>http://dist.springsource.com/release/TOOLS/update/e3.7</url>
+                            <url>http://subclipse.tigris.org/update_1.8.x</url>
                             <layout>p2</layout>
                         </repository>
                     </source>
-                    <ius>
-<!--
-                        <iu>
-                            <id>Core / dm Server Tools</id>
-                        </iu>
--->
-                        <iu>
-                            <id>file:/opt/build/ide/releng/org.springframework.ide.eclipse.site/category.xml.Core / Spring IDE</id>
-                        </iu>
-                        <iu>
-                            <id>file:/opt/build/sts/releng/com.springsource.sts.releng/feature-e3.7.builder/../build-e3.7/../update/e3.7/site.xml.Core / STS</id>
-                        </iu>
-                        <iu>
-                            <id>file:/opt/build/ide/releng/org.springframework.ide.eclipse.site/category.xml.Extensions (Incubation) / Spring IDE</id>
-                        </iu>
-                        <iu>
-                            <id>file:/opt/build/ide/releng/org.springframework.ide.eclipse.site/category.xml.Extensions / Spring IDE</id>
-                        </iu>
-                        <iu>
-                            <id>file:/opt/build/sts/releng/com.springsource.sts.releng/feature-e3.7.builder/../build-e3.7/../update/e3.7/site.xml.Extensions / STS</id>
-                        </iu>
-                        <iu>
-                            <id>file:/opt/build/ide/releng/org.springframework.ide.eclipse.site/category.xml.Integrations / Spring IDE</id>
-                        </iu>
-                        <iu>
-                            <id>file:/opt/build/ide/releng/org.springframework.ide.eclipse.site/category.xml.Resources / Spring IDE</id>
-                        </iu>
-
-                    </ius>
 
                     <destination>${project.build.directory}/repository</destination>
                     <followStrictOnly>false</followStrictOnly>
-                    <includeOptional>false</includeOptional>
+                    <includeOptional>true</includeOptional>
                     <latestVersionOnly>true</latestVersionOnly>
                     <mirrorMetadataOnly>false</mirrorMetadataOnly>
-                    <compress>false</compress>
+                    <compress>true</compress>
                     <append>true</append>
                 </configuration>
             </plugin>
